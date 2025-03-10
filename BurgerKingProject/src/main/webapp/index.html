@@ -3,8 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <title>첫 페이지!</title>
+<style>
+	h1 {
+		color : white; 
+		text-align : center; 
+		font-size : 80px;
+		width : 700px;
+		height : 360px;
+		margin : auto;
+		line-height : 360px;
+		background-color : #03c75a;
+	}
+	button{
+		width : 150px;
+		height : 40px;
+		font-weight : bold;
+		font-size : 18px;
+		border: none;
+		background : #03c75a;
+		color : white;
+		border-radius : 8px;
+		
+		&:hover{
+			cursor : pointer;
+			background-color : lightgreen;
+		}
+	}
+</style>
 </head>
 <body>
-	<h1 style="color:#03c75a; text-align:center; font-size:80px;">욧끼</h1>
+	<h1>WelCome</h1>
+	<hr>
+	<script>
+		//console.log(location);
+		// location 객체의 href 속성에 요청 url을 대입 
+		function forwardRequestPage(){
+			location.href = 'http://127.0.0.1/bk/static/Request_Page.html';
+		}
+	</script>
+<!-- 	<button onclick="location.href='static/Request_Page.html'"> 다음! </button> -->
+	<button onclick="forwardRequestPage();"> 다음! </button>
+	
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>두번째 페이지!</title>
+<style>
+	body{
+		padding : 250px;
+	}
+</style>
+</head>
+<body>
+	
+	<h1>나는 정적자원</h1>
+	<h1> BurgerKing을 시작해보아요!!!</h1>
+	
+	<!-- Java에서 View와 같음 입력 양식이 필요!
+		 System.out.print("아이디를 입력해주세요! > "); 
+		 String userId = scc.nextLine();	 
+	-->
+	
+	
+	<!--
+		case 1 : 요청 URL				
+		상대 경로 방식
+		-- 현재 URL의 가장 마지막 / 뒤에 값이 붙음
+		
+		case 3 : /bk/case3
+		절대 경로 방식
+		
+	-->
+		 
+	<form action="/bk/order" method="GET"> 
+		<!-- 사용자가 입력한 data를 보내는 방식과 처리할 프로그램을 정하는 태그 -->
+	
+	<span>원하는 햄부기 개수를 입력해주세요!</span>
+	<input type="text" name="num" placeholder="숫자만 넣어주세요!" />	
+	<br>
+	<input type="text" name="product-name" placeholder="상품명을 입력해주세요~" />
+	<br/>
+	<button type="submit">서버에 요청!</button>
+	</form>
+	
+	<hr>
+	
+	<!-- 상대경로 / 절대경로  -->
+	
+	<form action="/bk/sign-up.do" method="POST">
+		<fieldset>
+			<legend>회원가입 양식</legend>
+			아이디 : <br/>
+			<input type="text" placeholder="아이디를 입력해주세요 ~ " name="userId"/><br/>
+			비밀번호 : <br/>
+			<input type="password" placeholder="비밀번호를 입력해주세요 ~ " name="userPw"/><br/>
+			이름 : <br/>
+			<input type="text" placeholder="이름을 입력하세요~" name="userName"/><br/><br/>
+			
+			<button type="submit">회원가입(INSERT)</button>
+		</fieldset>
+	</form>
+</body>
+</html>
