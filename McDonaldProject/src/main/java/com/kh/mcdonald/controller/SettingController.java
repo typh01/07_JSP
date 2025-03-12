@@ -1,11 +1,15 @@
 package com.kh.mcdonald.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.kh.mcdonald.model.dto.Hamburger;
 
@@ -53,14 +57,29 @@ public class SettingController extends HttpServlet {
 		 */
 		
 		// requestScope
-		request.setAttribute("brand", "KFC");
+		request.setAttribute("brand", "KFC");   
 		request.setAttribute("bestSeller", new Hamburger("징거버거", 6200, "KFC"));
 		
-		//
+		// sessionScope
+		HttpSession session = request.getSession();
+		session.setAttribute("brand", "Mcdonald");
+		session.setAttribute("bestSeller", new Hamburger("빅맥", 6200, "Mcdonald"));
+		
+		//숫자
+		request.setAttribute("big", 10);
+		request.setAttribute("small", 3);
+		
+		// 문자
+		request.setAttribute("str", "흐흐");
+		
+		// 리스트
+		request.setAttribute("list", new ArrayList());
+		
 		
 		// 응답 뷰 위임 -> 포워딩
+		request.getRequestDispatcher("WEB-INF/views/print.jsp").forward(request, response);
 		
-		
+		// 같은 키값으로 담았는데 requestScope가 나옴 직접 접근하면 가능
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -28,11 +28,15 @@
 	-->
 	<a href="sc">안써보셨음? 왜안씀? 집에서 안 함?</a>
 	
+	<hr>
 	
+	<a href="include">포함포함 하자!</a>
+	<br/>
+	<a href ="forward">포워드 JSP로 이동!</a>
 	
+	<hr>
 	
-	
-	
+	<a href="jstl">실과 바늘 배우러가기</a>
 	
 	
 </body>
